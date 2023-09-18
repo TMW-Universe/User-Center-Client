@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@tanstack/react-query": "^4.35.3",
+    "@tmw-universe/react-tmw-universe-authentication-utils": "^2.4.1",
     "@tmw-universe/tmw-universe-types": "^1.0.4",
     "antd": "^5.9.0",
     "axios": "^1.5.0",
