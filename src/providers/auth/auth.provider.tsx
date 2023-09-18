@@ -14,8 +14,14 @@ export default function AuthProvider({ children }: Props) {
         authClient: "http://localhost:8002",
         authHost: "http://localhost:5000",
         onAccountChange: (account) => {
-          if (account && account?.preferences?.language)
-            i18n.changeLanguage(account.preferences.language);
+          if (account) {
+            if (account?.preferences?.language) {
+              i18n.changeLanguage(account.preferences.language);
+            }
+            if (account.preferences?.color) {
+              // Change color
+            }
+          }
         },
       }}
     >
