@@ -1,3 +1,6 @@
 export enum Translations {
-  common = "common",
+  COMMON = "common",
+
+  // TMW Universe
+  TMWU_AUTH = "tmwu_auth",
 }

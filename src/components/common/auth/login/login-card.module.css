@@ -1,0 +1,15 @@
+.card {
+  max-width: 80%;
+  width: 40em;
+
+  .logo {
+    > img {
+      width: 50%;
+      max-width: 15em;
+    }
+  }
+
+  .title {
+    text-align: center;
+  }
+}

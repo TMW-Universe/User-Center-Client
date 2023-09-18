@@ -3,12 +3,16 @@ import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 import { Translations } from "./translations.enum";
 
-import en_US_common from "./locales/en_US/common.json";
+import en_US_common from "./locales/en_US/common/common.json";
+import en_US_tmwu_auth from "./locales/en_US/tmwu/auth.json";
 import { Language } from "@tmw-universe/tmw-universe-types";
 
 const resources = {
   [Language.en_US]: {
-    [Translations.common]: en_US_common,
+    [Translations.COMMON]: en_US_common,
+
+    // TMW Universe
+    [Translations.TMWU_AUTH]: en_US_tmwu_auth,
   },
 };
 
