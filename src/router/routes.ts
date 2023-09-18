@@ -1,5 +1,5 @@
 type Route = (params: never) => string;
 
 export const routes = {
-  MAIN_PAGE: () => "/",
+  HOME: () => `/`,
 } satisfies Record<string, Route>;

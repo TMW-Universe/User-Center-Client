@@ -3,8 +3,8 @@ import { routes } from "./routes";
 
 const routes_definition: Route[] = [
   {
-    path: routes.MAIN_PAGE(),
-    loader: () => import("../pages/main.page"),
+    path: routes.HOME(),
+    loader: () => import("../pages/home.page"),
   },
 ];
 
