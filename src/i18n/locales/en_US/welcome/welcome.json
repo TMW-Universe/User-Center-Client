@@ -1,5 +1,23 @@
 {
     "user-info": {
-        "Welcome": "Welcome, {{name}}"
+        "Welcome": "Welcome, {{name}}",
+        "Description": "Here you are able to manage all your TMW Universe profile information."
+    },
+    "profile-modules": {
+        "user-info": {
+            "Title": "Personal information",
+            "Description": "Check your personal information and modify it whenever you want to.",
+            "Action": "Go to personal information"
+        },
+        "user-prefs": {
+            "Title": "User preferences",
+            "Description": "Customize your experience so it adapts to you.",
+            "Action": "Go to user preferences"
+        },
+        "security": {
+            "Title": "Account security",
+            "Description": "Keep your account safe so you are the only one capable of accessing to it.",
+            "Action": "Go to security"
+        }
     }
 }

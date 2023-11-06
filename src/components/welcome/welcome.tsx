@@ -2,13 +2,12 @@ import {
   getFullName,
   useTwmuAccount,
 } from "@tmw-universe/react-tmw-universe-authentication-utils";
-import { Col, Flex, Row, Typography } from "antd";
+import { Flex, Typography } from "antd";
 import UserProfileImage from "../user/profile/user-profile-image";
 import { useTranslation } from "react-i18next";
 import { Translations } from "../../i18n/translations.enum";
-//import styles from "./welcome.module.css";
 
-const { Title } = Typography;
+const { Title, Text } = Typography;
 
 export default function Welcome() {
   const { account, isAuthenticated } = useTwmuAccount();
@@ -17,15 +16,14 @@ export default function Welcome() {
   if (!isAuthenticated) throw new Error();
 
   return (
-    <Row gutter={[12, 12]}>
-      <Col span={24}>
-        <Flex vertical align="center" gap="1em">
-          <UserProfileImage user={account} />
-          <Title level={4}>
-            {t("user-info.Welcome", { name: getFullName(account) })}
-          </Title>
-        </Flex>
-      </Col>
-    </Row>
+    <Flex vertical align="center" gap="1.5em">
+      <UserProfileImage user={account} />
+      <Flex vertical align="center">
+        <Title level={4}>
+          {t("user-info.Welcome", { name: getFullName(account) })}
+        </Title>
+        <Text>{t("user-info.Description")}</Text>
+      </Flex>
+    </Flex>
   );
 }

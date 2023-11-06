@@ -7,7 +7,9 @@ type Props = {
 export default function RouteLayout({ children }: Props) {
   return (
     <>
-      <div className={styles.container}>{children}</div>
+      <div className={styles.container}>
+        <div>{children}</div>
+      </div>
     </>
   );
 }
