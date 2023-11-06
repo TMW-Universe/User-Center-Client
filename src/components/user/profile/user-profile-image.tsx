@@ -1,4 +1,5 @@
 import { Account } from "@tmw-universe/tmw-universe-types";
+import { Avatar } from "antd";
 import md5 from "blueimp-md5";
 
 type Props = {
@@ -7,8 +8,11 @@ type Props = {
 
 export default function UserProfileImage({ user: { email } }: Props) {
   return (
-    <img
-      src={`https://gravatar.com/avatar/${md5(email.trim().toLowerCase())}`}
+    <Avatar
+      size={128}
+      src={`https://gravatar.com/avatar/${md5(
+        email.trim().toLowerCase()
+      )}?s=200`}
     />
   );
 }
