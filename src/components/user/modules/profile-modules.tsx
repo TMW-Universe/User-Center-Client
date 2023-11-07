@@ -6,6 +6,8 @@ import preferencesImage from "../../../assets/user-modules/preferences.png";
 import securityImage from "../../../assets/user-modules/security.png";
 
 import styles from "./profile-modules.module.css";
+import { useNavigate } from "react-router-dom";
+import { routes } from "../../../router/routes";
 
 const { Text, Title } = Typography;
 
@@ -23,6 +25,8 @@ interface Module {
 export default function ProfileModules() {
   const { t } = useTranslation([Translations.WELCOME]);
 
+  const navigate = useNavigate();
+
   const modules: Module[] = [
     {
       key: "user-info",
@@ -31,7 +35,7 @@ export default function ProfileModules() {
       imageSrc: informationImage,
       action: {
         text: t("profile-modules.user-info.Action"),
-        onClick: () => {},
+        onClick: () => navigate(routes.USER_INFO()),
       },
     },
     {
