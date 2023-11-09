@@ -1,8 +1,9 @@
 import { Flex, Typography } from "antd";
 import { useTranslation } from "react-i18next";
 import { Translations } from "../../../../i18n/translations.enum";
-import BasicInformationCard from "./basic-information-card";
+import BasicInformationCard from "./basic-info/basic-information-card";
 import { Account } from "@tmw-universe/tmw-universe-types";
+import AccountInformationCard from "./account-info/account-information-card";
 
 const { Text, Title } = Typography;
 
@@ -21,6 +22,7 @@ export default function UserInfo({ account }: Props) {
       </Flex>
       <Flex vertical gap="2em">
         <BasicInformationCard account={account} />
+        <AccountInformationCard account={account} />
       </Flex>
     </Flex>
   );

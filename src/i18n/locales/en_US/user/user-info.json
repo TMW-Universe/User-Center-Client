@@ -9,7 +9,16 @@
             "Description": "Information related to your identity.",
             "user-info": {
                 "Name": "Name",
-                "Email": "Email"
+                "Email": "Email",
+                "Birthdate": "Birthdate"
+            }
+        },
+        "account-info": {
+            "Title": "Account information",
+            "Description": "Information related to your TMWU account.",
+            "user-info": {
+                "Username": "Username",
+                "Password": "Password"
             }
         }
     }
