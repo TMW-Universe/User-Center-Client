@@ -2,5 +2,15 @@
     "header": {
         "Title": "User information",
         "Description": "Modify your personal information. All TMWU services will be able to use this information."
+    },
+    "sections": {
+        "basic-info": {
+            "Title": "Basic information",
+            "Description": "Information related to your identity.",
+            "user-info": {
+                "Name": "Name",
+                "Email": "Email"
+            }
+        }
     }
 }
