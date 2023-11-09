@@ -1,3 +1,4 @@
+import GlobalNavigationLayout from "../../components/common/layout/global/global-navigation-layout";
 import styles from "./route.layout.module.css";
 
 type Props = {
@@ -6,10 +7,10 @@ type Props = {
 
 export default function RouteLayout({ children }: Props) {
   return (
-    <>
+    <GlobalNavigationLayout>
       <div className={styles.container}>
         <div>{children}</div>
       </div>
-    </>
+    </GlobalNavigationLayout>
   );
 }

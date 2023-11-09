@@ -1,0 +1,11 @@
+.navbar {
+  padding: 2em;
+
+  img {
+    height: 4em;
+  }
+
+  img:hover {
+    cursor: pointer;
+  }
+}
