@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { Translations } from "../../../../../i18n/translations.enum";
 import { getFullName } from "@tmw-universe/react-tmw-universe-authentication-utils";
 import UserInfoCardDisplay from "../user-info-card-display";
+import { format } from "date-fns";
 
 const { Text } = Typography;
 
@@ -23,10 +24,10 @@ export default function BasicInformationCard({ account }: Props) {
       label: t("sections.basic-info.user-info.Email"),
       content: <Text>{account.email}</Text>,
     },
-    // {
-    //   label: t(''),
-    //   value: <Text>{account.birthDate}</Text>
-    // }
+    {
+      label: t("sections.basic-info.user-info.Birthdate"),
+      content: <Text>{format(account.birthDate, "dd/MM/yyyy")}</Text>,
+    },
   ];
 
   return (
