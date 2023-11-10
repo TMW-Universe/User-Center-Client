@@ -11,8 +11,8 @@ export default function AuthProvider({ children }: Props) {
   return (
     <TmwuAuthProvider
       options={{
-        authClient: "http://localhost:8002",
-        authHost: "http://localhost:5000",
+        authClient: import.meta.env.VITE_AUTH_CLIENT_HOST,
+        authHost: import.meta.env.VITE_AUTH_HOST,
         onAccountChange: (account) => {
           if (account) {
             if (account?.preferences?.language) {
