@@ -6,9 +6,6 @@ COPY package*.json ./
 RUN npm install
 COPY . .
 
-# Copy .env file
-COPY .env .
-
 RUN npm run build
 
 # Stage 2: Serve React app with Nginx
