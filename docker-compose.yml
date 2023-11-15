@@ -6,6 +6,9 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "8001:8001"
+      - "80:80"
+      - "443:443"
     env_file:
       - .env
+    volumes:
+      - './ssl:/etc/nginx/cert'
