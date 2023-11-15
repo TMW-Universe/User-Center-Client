@@ -27,3 +27,8 @@ dist-ssr
 .env
 
 .nginx.conf
+
+# Certificates
+*.csr
+*.crt
+*.key
