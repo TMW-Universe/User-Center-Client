@@ -1,11 +1,13 @@
-import { Card, Col, Flex, List, Row, Typography } from "antd";
+import { Button, Card, Col, Flex, List, Row, Typography } from "antd";
 import { chunk } from "lodash";
+
 import styles from "./user-info-card-display.module.css";
+import { RightOutlined } from "@ant-design/icons";
 
 const { Text, Title } = Typography;
 
 type Props = {
-  datasource: { label: string; content: JSX.Element }[];
+  datasource: { label: string; content: JSX.Element; onAction?: () => void }[];
   title: string;
   description: string;
 };
@@ -30,7 +32,18 @@ export default function UserInfoCardDisplay({
                 renderItem={(item) => (
                   <List.Item>
                     <Text className={styles.bold}>{item.label}</Text>
-                    {item.content}
+                    <Row gutter={[3, 0]} align="middle">
+                      <Col>{item.content}</Col>
+                      {item.onAction && (
+                        <Col>
+                          <Button
+                            onClick={item.onAction}
+                            type="link"
+                            icon={<RightOutlined />}
+                          />
+                        </Col>
+                      )}
+                    </Row>
                   </List.Item>
                 )}
               />

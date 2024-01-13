@@ -3,7 +3,6 @@ import UserInfoCardDisplay from "../user-info-card-display";
 import { Translations } from "../../../../../i18n/translations.enum";
 import { Switch, Typography } from "antd";
 import { Account } from "@tmw-universe/tmw-universe-types";
-import UserInfoEditDrawer from "../../user-edit-commons/user-info-edit-drawer";
 
 const { Text } = Typography;
 
@@ -14,7 +13,11 @@ type Props = {
 export default function AccountInformationCard({ account }: Props) {
   const { t } = useTranslation([Translations.USER_INFO]);
 
-  const datasource: { label: string; content: JSX.Element }[] = [
+  const datasource: {
+    label: string;
+    content: JSX.Element;
+    onAction?: () => void;
+  }[] = [
     {
       label: t("sections.account-info.user-info.Username"),
       content: <Text>{account.username}</Text>,
@@ -36,10 +39,6 @@ export default function AccountInformationCard({ account }: Props) {
         title={t("sections.account-info.Title")}
         description={t("sections.account-info.Description")}
       />
-
-      <UserInfoEditDrawer>
-        <p>a</p>
-      </UserInfoEditDrawer>
     </>
   );
 }
