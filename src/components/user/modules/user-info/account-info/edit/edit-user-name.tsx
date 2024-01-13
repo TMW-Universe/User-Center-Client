@@ -44,6 +44,7 @@ export default function EditUserName({
     defaultValues: { name, firstSurname, secondSurname },
     onSubmit: async (values) => {
       await mutateAsync(values);
+      onClose();
     },
   });
 

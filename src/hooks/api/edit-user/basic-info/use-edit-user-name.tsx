@@ -13,7 +13,7 @@ export function useEditUserName() {
   return useMutation({
     mutationFn: async (data: EditUserProfileNameDTO) =>
       await request({
-        url: `${import.meta.env.VITE_AUTH_HOST}/users/profile/name`,
+        url: `${import.meta.env.VITE_AUTH_HOST}/api/users/profile/name`,
         method: "put",
         data,
       }),
