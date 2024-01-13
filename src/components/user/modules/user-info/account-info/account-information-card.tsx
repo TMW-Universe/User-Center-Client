@@ -3,6 +3,7 @@ import UserInfoCardDisplay from "../user-info-card-display";
 import { Translations } from "../../../../../i18n/translations.enum";
 import { Switch, Typography } from "antd";
 import { Account } from "@tmw-universe/tmw-universe-types";
+import UserInfoEditDrawer from "../../user-edit-commons/user-info-edit-drawer";
 
 const { Text } = Typography;
 
@@ -29,10 +30,16 @@ export default function AccountInformationCard({ account }: Props) {
   ];
 
   return (
-    <UserInfoCardDisplay
-      datasource={datasource}
-      title={t("sections.account-info.Title")}
-      description={t("sections.account-info.Description")}
-    />
+    <>
+      <UserInfoCardDisplay
+        datasource={datasource}
+        title={t("sections.account-info.Title")}
+        description={t("sections.account-info.Description")}
+      />
+
+      <UserInfoEditDrawer>
+        <p>a</p>
+      </UserInfoEditDrawer>
+    </>
   );
 }
