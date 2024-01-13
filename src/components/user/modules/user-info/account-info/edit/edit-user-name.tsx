@@ -7,6 +7,7 @@ import { SaveOutlined } from "@ant-design/icons";
 import { useTranslation } from "react-i18next";
 import { Translations } from "../../../../../../i18n/translations.enum";
 import { useEffect } from "react";
+import { useEditUserName } from "../../../../../../hooks/api/edit-user/basic-info/use-edit-user-name";
 
 const { Text } = Typography;
 
@@ -36,11 +37,14 @@ export default function EditUserName({
   onClose,
 }: Props) {
   const { t } = useTranslation([Translations.USER_INFO, Translations.COMMON]);
+  const { mutateAsync } = useEditUserName();
 
   const form = useForm({
     objectSchema: FORM_SCHEMA,
     defaultValues: { name, firstSurname, secondSurname },
-    onSubmit: async (values) => {},
+    onSubmit: async (values) => {
+      await mutateAsync(values);
+    },
   });
 
   useEffect(() => {
