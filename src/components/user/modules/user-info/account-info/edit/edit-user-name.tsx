@@ -4,20 +4,20 @@ import { object, string } from "yup";
 
 type Props = {
   name: string;
-  firstLastName: string;
-  secondLastName: string;
+  firstSurname: string;
+  secondSurname: string;
 };
 
 const FORM_SCHEMA = object({
   name: string().required(),
-  firstLastName: string().required(),
-  secondLastName: string().required(),
+  firstSurname: string().required(),
+  secondSurname: string().required(),
 });
 
 export default function EditUserName({
   name,
-  firstLastName,
-  secondLastName,
+  firstSurname,
+  secondSurname,
 }: Props) {
   const form = useForm({ objectSchema: FORM_SCHEMA });
 
