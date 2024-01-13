@@ -1,5 +1,5 @@
 import GlobalNavigationLayout from "../../components/common/layout/global/global-navigation-layout";
-import styles from "./route.layout.module.css";
+import styles from "./route.layout.module.pcss";
 
 type Props = {
   children: JSX.Element;

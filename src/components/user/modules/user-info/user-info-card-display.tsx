@@ -1,8 +1,7 @@
 import { Button, Card, Col, Flex, List, Row, Typography } from "antd";
 import { chunk } from "lodash";
-
-import styles from "./user-info-card-display.module.css";
 import { RightOutlined } from "@ant-design/icons";
+import styles from "./user-info-card-display.module.pcss";
 
 const { Text, Title } = Typography;
 

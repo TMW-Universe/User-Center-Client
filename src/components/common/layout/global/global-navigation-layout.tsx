@@ -1,12 +1,12 @@
 import { Button, Flex, Typography } from "antd";
 import tmwuLogo from "../../../../assets/branding/tmw_universe_logo.png";
-import styles from "./global-navigation-layout.module.css";
 import { useNavigate } from "react-router-dom";
 import { routes } from "../../../../router/routes";
 import { useTmwuAuthentication } from "@tmw-universe/react-tmw-universe-authentication-utils";
 import { useTranslation } from "react-i18next";
 import { Translations } from "../../../../i18n/translations.enum";
 import { LogoutOutlined } from "@ant-design/icons";
+import styles from "./global-navigation-layout.module.pcss";
 
 const { Text } = Typography;
 
