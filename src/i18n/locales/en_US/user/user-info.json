@@ -22,5 +22,21 @@
                 "2FA": "Two factor authentication"
             }
         }
+    },
+    "edit": {
+        "name": {
+            "Title": "Edit name",
+            "fields": {
+                "name": {
+                    "Label": "Name"
+                },
+                "firstSurname": {
+                    "Label": "First surname"
+                },
+                "secondSurname": {
+                    "Label": "Second surname"
+                }
+            }
+        }
     }
 }
