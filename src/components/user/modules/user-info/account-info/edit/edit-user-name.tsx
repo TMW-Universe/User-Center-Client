@@ -8,6 +8,7 @@ import { useTranslation } from "react-i18next";
 import { Translations } from "../../../../../../i18n/translations.enum";
 import { useEffect } from "react";
 import { useEditUserName } from "../../../../../../hooks/api/edit-user/basic-info/use-edit-user-name";
+import { useTwmuAccount } from "@tmw-universe/react-tmw-universe-authentication-utils";
 
 const { Text } = Typography;
 
@@ -36,6 +37,7 @@ export default function EditUserName({
   open,
   onClose,
 }: Props) {
+  const { refetchUserAccount, isAuthenticated } = useTwmuAccount();
   const { t } = useTranslation([Translations.USER_INFO, Translations.COMMON]);
   const { mutateAsync } = useEditUserName();
 
@@ -44,6 +46,7 @@ export default function EditUserName({
     defaultValues: { name, firstSurname, secondSurname },
     onSubmit: async (values) => {
       await mutateAsync(values);
+      if (isAuthenticated) await refetchUserAccount();
       onClose();
     },
   });
