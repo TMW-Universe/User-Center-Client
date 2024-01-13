@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import UserInfoCardDisplay from "../user-info-card-display";
 import { Translations } from "../../../../../i18n/translations.enum";
-import { Typography } from "antd";
+import { Switch, Typography } from "antd";
 import { Account } from "@tmw-universe/tmw-universe-types";
 
 const { Text } = Typography;
@@ -21,6 +21,10 @@ export default function AccountInformationCard({ account }: Props) {
     {
       label: t("sections.account-info.user-info.Password"),
       content: <Text>*******</Text>,
+    },
+    {
+      label: t("sections.account-info.user-info.2FA"),
+      content: <Switch disabled />,
     },
   ];
 

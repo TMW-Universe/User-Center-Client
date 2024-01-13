@@ -18,7 +18,8 @@
             "Description": "Information related to your TMWU account.",
             "user-info": {
                 "Username": "Username",
-                "Password": "Password"
+                "Password": "Password",
+                "2FA": "Two factor authentication"
             }
         }
     }
