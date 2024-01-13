@@ -9,6 +9,7 @@ import DateFormItem from "../../../../../common/form/items/date/date.form-item";
 import { SaveOutlined } from "@ant-design/icons";
 import { useEffect } from "react";
 import { useEditUserBirthdate } from "../../../../../../hooks/api/edit-user/basic-info/use-edit-user-birthdate";
+import { isFuture } from "date-fns";
 
 const { Text } = Typography;
 
@@ -71,7 +72,12 @@ export default function EditUserBirthdate({ birthdate, open, onClose }: Props) {
               ns: Translations.USER_INFO,
             })}
           </Text>
-          <DateFormItem<FormType, "birthdate"> name="birthdate" />
+          <DateFormItem<FormType, "birthdate">
+            name="birthdate"
+            componentProps={{
+              disabledDate: (date) => isFuture(date),
+            }}
+          />
         </Flex>
       </Form>
     </Drawer>
