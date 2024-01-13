@@ -37,6 +37,14 @@
                     "Label": "Second surname"
                 }
             }
+        },
+        "birthdate": {
+            "Title": "Edit birthdate",
+            "fields": {
+                "birthdate": {
+                    "Label": "Birthdate"
+                }
+            }
         }
     }
 }

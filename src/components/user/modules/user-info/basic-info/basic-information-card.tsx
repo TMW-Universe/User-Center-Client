@@ -7,6 +7,7 @@ import UserInfoCardDisplay from "../user-info-card-display";
 import { format } from "date-fns";
 import { useState } from "react";
 import EditUserName from "../account-info/edit/edit-user-name";
+import EditUserBirthdate from "../account-info/edit/edit-user-birthdate";
 
 const { Text } = Typography;
 
@@ -18,6 +19,8 @@ export default function BasicInformationCard({ account }: Props) {
   const { t } = useTranslation([Translations.USER_INFO]);
 
   const [isEditUserNameVisible, setEditUserNameVisibility] = useState(false);
+  const [isEditUserBirthdateVisible, setEditUserBirthdateVisibility] =
+    useState(false);
 
   const datasource: {
     label: string;
@@ -36,6 +39,7 @@ export default function BasicInformationCard({ account }: Props) {
     {
       label: t("sections.basic-info.user-info.Birthdate"),
       content: <Text>{format(account.birthDate, "dd/MM/yyyy")}</Text>,
+      onAction: () => setEditUserBirthdateVisibility(true),
     },
   ];
 
@@ -53,6 +57,12 @@ export default function BasicInformationCard({ account }: Props) {
         name={account.name}
         firstSurname={account.firstSurname}
         secondSurname={account.secondSurname}
+      />
+
+      <EditUserBirthdate
+        open={isEditUserBirthdateVisible}
+        onClose={() => setEditUserBirthdateVisibility(false)}
+        birthdate={account.birthDate}
       />
     </>
   );
