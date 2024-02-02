@@ -45,6 +45,17 @@
                     "Label": "Birthdate"
                 }
             }
+        },
+        "password": {
+            "Title": "Edit password",
+            "fields": {
+                "password": {
+                    "Label": "Password"
+                },
+                "repeat-password": {
+                    "Label": "Repeat password"
+                }
+            }
         }
     }
 }
