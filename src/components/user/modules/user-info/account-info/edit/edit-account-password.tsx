@@ -2,12 +2,13 @@ import { useForm } from "react-handled-forms";
 import Form from "react-handled-forms/dist/components/form";
 import { InferType, object, string } from "yup";
 import TextFormItem from "../../../../../common/form/items/text/text.form-item";
-import { Button, Drawer, Flex, Typography } from "antd";
+import { Button, Drawer, Flex, Progress, Typography } from "antd";
 import { SaveOutlined } from "@ant-design/icons";
 import { useTranslation } from "react-i18next";
 import { Translations } from "../../../../../../i18n/translations.enum";
 import { useEffect } from "react";
 import { useEditAccountPassword } from "../../../../../../hooks/api/edit-user/account-info/use-edit-account-password";
+import { evaluatePassword } from "../../../../../../utils/passwords/evaluate-password.util";
 
 const { Text } = Typography;
 
@@ -44,7 +45,9 @@ export default function EditAccountPassword({ open, onClose }: Props) {
     formState: { password, repeatPassword },
   } = form;
 
-  const isPasswordValid = password === repeatPassword;
+  const passwordEvaluation = password ? evaluatePassword(password) : null;
+  const isPasswordValid =
+    password === repeatPassword && (passwordEvaluation?.percent ?? 0) > 50;
 
   return (
     <Drawer
@@ -76,6 +79,10 @@ export default function EditAccountPassword({ open, onClose }: Props) {
             <TextFormItem<FormType, "password">
               name="password"
               componentProps={{ minLength: 10, maxLength: 64, showCount: true }}
+            />
+            <Progress
+              percent={passwordEvaluation?.percent}
+              strokeColor={passwordEvaluation?.color}
             />
           </Flex>
         </Flex>
