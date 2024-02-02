@@ -47,7 +47,7 @@ export default function EditAccountPassword({ open, onClose }: Props) {
 
   const passwordEvaluation = password ? evaluatePassword(password) : null;
   const isPasswordValid =
-    password === repeatPassword && (passwordEvaluation?.percent ?? 0) > 50;
+    password === repeatPassword && passwordEvaluation?.isSecure;
 
   return (
     <Drawer

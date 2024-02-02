@@ -24,10 +24,13 @@ export const evaluatePassword = (password: string) => {
     color = purple[4];
   }
 
+  const isSecure = score <= 50;
+
   return {
     score,
     percent,
     securityLevel,
     color,
+    isSecure,
   };
 };
