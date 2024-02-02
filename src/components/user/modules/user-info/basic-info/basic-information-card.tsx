@@ -6,8 +6,8 @@ import { getFullName } from "@tmw-universe/react-tmw-universe-authentication-uti
 import UserInfoCardDisplay from "../user-info-card-display";
 import { format } from "date-fns";
 import { useState } from "react";
-import EditUserName from "../account-info/edit/edit-user-name";
-import EditUserBirthdate from "../account-info/edit/edit-user-birthdate";
+import EditUserName from "./edit/edit-user-name";
+import EditUserBirthdate from "./edit/edit-user-birthdate";
 
 const { Text } = Typography;
 
