@@ -53,7 +53,8 @@
                     "Label": "Password"
                 },
                 "repeat-password": {
-                    "Label": "Repeat password"
+                    "Label": "Repeat password",
+                    "Description": "Repeat the provided password"
                 }
             }
         }

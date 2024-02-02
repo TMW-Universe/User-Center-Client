@@ -95,7 +95,17 @@ export default function EditAccountPassword({ open, onClose }: Props) {
             </Text>
             <PasswordFormItem<FormType, "repeatPassword">
               name="repeatPassword"
-              componentProps={{ minLength: 10, maxLength: 64, showCount: true }}
+              componentProps={{
+                minLength: 10,
+                maxLength: 64,
+                showCount: true,
+                "aria-description": t(
+                  "edit.password.fields.repeat-password.Description",
+                  {
+                    ns: Translations.USER_INFO,
+                  }
+                ),
+              }}
             />
           </Flex>
         </Flex>
