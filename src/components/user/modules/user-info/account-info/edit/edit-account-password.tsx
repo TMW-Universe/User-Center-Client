@@ -1,7 +1,6 @@
 import { useForm } from "react-handled-forms";
 import Form from "react-handled-forms/dist/components/form";
 import { InferType, object, string } from "yup";
-import TextFormItem from "../../../../../common/form/items/text/text.form-item";
 import { Button, Drawer, Flex, Progress, Typography } from "antd";
 import { SaveOutlined } from "@ant-design/icons";
 import { useTranslation } from "react-i18next";
@@ -9,6 +8,7 @@ import { Translations } from "../../../../../../i18n/translations.enum";
 import { useEffect } from "react";
 import { useEditAccountPassword } from "../../../../../../hooks/api/edit-user/account-info/use-edit-account-password";
 import { evaluatePassword } from "../../../../../../utils/passwords/evaluate-password.util";
+import PasswordFormItem from "../../../../../common/form/items/text/password.form-item";
 
 const { Text } = Typography;
 
@@ -76,7 +76,7 @@ export default function EditAccountPassword({ open, onClose }: Props) {
                 ns: Translations.USER_INFO,
               })}
             </Text>
-            <TextFormItem<FormType, "password">
+            <PasswordFormItem<FormType, "password">
               name="password"
               componentProps={{ minLength: 10, maxLength: 64, showCount: true }}
             />
@@ -93,7 +93,7 @@ export default function EditAccountPassword({ open, onClose }: Props) {
                 ns: Translations.USER_INFO,
               })}
             </Text>
-            <TextFormItem<FormType, "repeatPassword">
+            <PasswordFormItem<FormType, "repeatPassword">
               name="repeatPassword"
               componentProps={{ minLength: 10, maxLength: 64, showCount: true }}
             />
