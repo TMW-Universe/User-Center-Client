@@ -57,6 +57,10 @@ export default function EditAccountPassword({ open, onClose }: Props) {
   const isPasswordValid =
     password === repeatPassword && passwordEvaluation?.isSecure;
   const passwordHasBeenWritten = (password?.length ?? 0) > 0;
+  const passwordsDontMatch =
+    password !== repeatPassword &&
+    passwordHasBeenWritten &&
+    (repeatPassword?.length ?? 0) > 0;
 
   return (
     <Drawer
@@ -115,7 +119,8 @@ export default function EditAccountPassword({ open, onClose }: Props) {
               }}
             />
           </Flex>
-          {!isPasswordValid && passwordHasBeenWritten && <Divider />}
+          {(!passwordEvaluation?.isSecure || passwordsDontMatch) &&
+            passwordHasBeenWritten && <Divider />}
           {!passwordEvaluation?.isSecure && passwordHasBeenWritten && (
             <Alert
               showIcon
@@ -128,23 +133,21 @@ export default function EditAccountPassword({ open, onClose }: Props) {
               })}
             />
           )}
-          {password !== repeatPassword &&
-            passwordHasBeenWritten &&
-            (repeatPassword?.length ?? 0) > 0 && (
-              <Alert
-                showIcon
-                type="warning"
-                message={t("edit.password.alerts.passwords-no-match.Message", {
+          {passwordsDontMatch && (
+            <Alert
+              showIcon
+              type="warning"
+              message={t("edit.password.alerts.passwords-no-match.Message", {
+                ns: Translations.USER_INFO,
+              })}
+              description={t(
+                "edit.password.alerts.passwords-no-match.Description",
+                {
                   ns: Translations.USER_INFO,
-                })}
-                description={t(
-                  "edit.password.alerts.passwords-no-match.Description",
-                  {
-                    ns: Translations.USER_INFO,
-                  }
-                )}
-              />
-            )}
+                }
+              )}
+            />
+          )}
         </Flex>
       </Form>
     </Drawer>
