@@ -56,6 +56,16 @@
                     "Label": "Repeat password",
                     "Description": "Repeat the provided password"
                 }
+            },
+            "alerts": {
+                "weak-password": {
+                    "Message": "Password too weak",
+                    "Description": "The provided password is too weak. We recommend you to combine letters, numbers and special characters."
+                },
+                "passwords-no-match": {
+                    "Message": "Passwords don't match",
+                    "Description": "The retyped password does not match with the original one"
+                }
             }
         }
     }

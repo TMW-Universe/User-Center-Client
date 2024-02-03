@@ -1,7 +1,15 @@
 import { useForm } from "react-handled-forms";
 import Form from "react-handled-forms/dist/components/form";
 import { InferType, object, string } from "yup";
-import { Button, Drawer, Flex, Progress, Typography } from "antd";
+import {
+  Alert,
+  Button,
+  Divider,
+  Drawer,
+  Flex,
+  Progress,
+  Typography,
+} from "antd";
 import { SaveOutlined } from "@ant-design/icons";
 import { useTranslation } from "react-i18next";
 import { Translations } from "../../../../../../i18n/translations.enum";
@@ -48,6 +56,7 @@ export default function EditAccountPassword({ open, onClose }: Props) {
   const passwordEvaluation = password ? evaluatePassword(password) : null;
   const isPasswordValid =
     password === repeatPassword && passwordEvaluation?.isSecure;
+  const passwordHasBeenWritten = (password?.length ?? 0) > 0;
 
   return (
     <Drawer
@@ -85,8 +94,6 @@ export default function EditAccountPassword({ open, onClose }: Props) {
               strokeColor={passwordEvaluation?.color}
             />
           </Flex>
-        </Flex>
-        <Flex gap={6} vertical>
           <Flex vertical gap={3}>
             <Text>
               {t("edit.password.fields.repeat-password.Label", {
@@ -108,6 +115,36 @@ export default function EditAccountPassword({ open, onClose }: Props) {
               }}
             />
           </Flex>
+          {!isPasswordValid && passwordHasBeenWritten && <Divider />}
+          {!passwordEvaluation?.isSecure && passwordHasBeenWritten && (
+            <Alert
+              showIcon
+              type="warning"
+              message={t("edit.password.alerts.weak-password.Message", {
+                ns: Translations.USER_INFO,
+              })}
+              description={t("edit.password.alerts.weak-password.Description", {
+                ns: Translations.USER_INFO,
+              })}
+            />
+          )}
+          {password !== repeatPassword &&
+            passwordHasBeenWritten &&
+            (repeatPassword?.length ?? 0) > 0 && (
+              <Alert
+                showIcon
+                type="warning"
+                message={t("edit.password.alerts.passwords-no-match.Message", {
+                  ns: Translations.USER_INFO,
+                })}
+                description={t(
+                  "edit.password.alerts.passwords-no-match.Description",
+                  {
+                    ns: Translations.USER_INFO,
+                  }
+                )}
+              />
+            )}
         </Flex>
       </Form>
     </Drawer>
