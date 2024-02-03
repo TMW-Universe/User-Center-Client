@@ -1,4 +1,3 @@
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Router from "./router/router";
 import routes_definition from "./router/routes-definition";
 import { BrowserRouter } from "react-router-dom";
@@ -7,13 +6,12 @@ import AuthProvider from "./providers/auth/auth.provider";
 import Authenticated from "@tmw-universe/react-tmw-universe-authentication-utils/dist/components/authenticated";
 import NotAuthenticated from "@tmw-universe/react-tmw-universe-authentication-utils/dist/components/not-authenticated";
 import LoginPage from "./pages/auth/login/login.page";
-
-const queryClient = new QueryClient();
+import NetworkProvider from "./providers/networking/network.provider";
 
 export default function App() {
   return (
     <ConfigProvider>
-      <QueryClientProvider client={queryClient}>
+      <NetworkProvider>
         <AuthProvider>
           <>
             <Authenticated>
@@ -26,7 +24,7 @@ export default function App() {
             </NotAuthenticated>
           </>
         </AuthProvider>
-      </QueryClientProvider>
+      </NetworkProvider>
     </ConfigProvider>
   );
 }

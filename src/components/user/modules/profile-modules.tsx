@@ -4,10 +4,9 @@ import { Translations } from "../../../i18n/translations.enum";
 import informationImage from "../../../assets/user-modules/information.png";
 import preferencesImage from "../../../assets/user-modules/preferences.png";
 import securityImage from "../../../assets/user-modules/security.png";
-
-import styles from "./profile-modules.module.css";
 import { useNavigate } from "react-router-dom";
 import { routes } from "../../../router/routes";
+import styles from "./profile-modules.module.pcss";
 
 const { Text, Title } = Typography;
 

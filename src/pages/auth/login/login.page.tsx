@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import LoginCard from "../../../components/common/auth/login/login-card";
-import styles from "./login.page.module.css";
+import styles from "./login.page.module.pcss";
 
 export default function LoginPage() {
   return (

@@ -18,7 +18,63 @@
             "Description": "Information related to your TMWU account.",
             "user-info": {
                 "Username": "Username",
-                "Password": "Password"
+                "Password": "Password",
+                "2FA": "Two factor authentication"
+            }
+        }
+    },
+    "edit": {
+        "name": {
+            "Title": "Edit name",
+            "fields": {
+                "name": {
+                    "Label": "Name"
+                },
+                "firstSurname": {
+                    "Label": "First surname"
+                },
+                "secondSurname": {
+                    "Label": "Second surname"
+                }
+            }
+        },
+        "birthdate": {
+            "Title": "Edit birthdate",
+            "fields": {
+                "birthdate": {
+                    "Label": "Birthdate"
+                }
+            }
+        },
+        "password": {
+            "Title": "Edit password",
+            "fields": {
+                "current-password": {
+                    "Label": "Current password"
+                },
+                "password": {
+                    "Label": "New password"
+                },
+                "repeat-password": {
+                    "Label": "Repeat password",
+                    "Description": "Repeat the provided password"
+                }
+            },
+            "alerts": {
+                "weak-password": {
+                    "Message": "Password too weak",
+                    "Description": "The provided password is too weak. We recommend you to combine letters, numbers and special characters."
+                },
+                "passwords-no-match": {
+                    "Message": "Passwords don't match",
+                    "Description": "The retyped password does not match with the original one"
+                }
+            },
+            "errors": {
+                "wrong-password": {
+                    "Message": "Wrong password",
+                    "Description": "The password you provided does not match with the current password"
+                }
             }
         }
     }

@@ -3,8 +3,8 @@ import { Button, Card, Col, Row, Typography } from "antd";
 import { useTranslation } from "react-i18next";
 import { Translations } from "../../../../i18n/translations.enum";
 import tmwu_logo from "../../../../assets/branding/tmw_universe_logo.png";
-import styles from "./login-card.module.css";
 import classNames from "classnames";
+import styles from "./login-card.module.pcss";
 
 const { Title } = Typography;
 

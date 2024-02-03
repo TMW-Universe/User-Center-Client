@@ -1,7 +1,8 @@
 {
   "name": "user-center",
+  "author": "TheMineWay",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,6 +11,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ant-design/colors": "^7.0.2",
     "@ant-design/icons": "^5.2.6",
     "@tanstack/react-query": "^4.35.3",
     "@tmw-universe/react-tmw-universe-authentication-utils": "^2.7.1",
