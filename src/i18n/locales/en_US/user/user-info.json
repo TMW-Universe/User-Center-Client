@@ -49,8 +49,11 @@
         "password": {
             "Title": "Edit password",
             "fields": {
+                "current-password": {
+                    "Label": "Current password"
+                },
                 "password": {
-                    "Label": "Password"
+                    "Label": "New password"
                 },
                 "repeat-password": {
                     "Label": "Repeat password",

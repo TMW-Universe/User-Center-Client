@@ -26,6 +26,7 @@ type Props = {
 };
 
 const FORM_SCHEMA = object({
+  currentPassword: string().required(),
   password: string().required(),
   repeatPassword: string().required(),
 });
@@ -38,8 +39,8 @@ export default function EditAccountPassword({ open, onClose }: Props) {
 
   const form = useForm({
     objectSchema: FORM_SCHEMA,
-    onSubmit: async ({ password }) => {
-      await mutateAsync({ password });
+    onSubmit: async ({ password, currentPassword }) => {
+      await mutateAsync({ password, currentPassword });
       onClose();
     },
   });
@@ -82,7 +83,19 @@ export default function EditAccountPassword({ open, onClose }: Props) {
       }
     >
       <Form form={form}>
-        <Flex gap={6} vertical>
+        <Flex gap={3} vertical>
+          <Flex vertical gap={3}>
+            <Text>
+              {t("edit.password.fields.current-password.Label", {
+                ns: Translations.USER_INFO,
+              })}
+            </Text>
+            <PasswordFormItem<FormType, "currentPassword">
+              name="currentPassword"
+              componentProps={{ minLength: 10, maxLength: 64 }}
+            />
+          </Flex>
+          <Divider />
           <Flex vertical gap={3}>
             <Text>
               {t("edit.password.fields.password.Label", {

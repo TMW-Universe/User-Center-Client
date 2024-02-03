@@ -2,6 +2,7 @@ import { useMutation } from "react-query";
 import { useAuthenticatedRequest } from "../../../networking/use-authenticated-request";
 
 interface EditAccountPasswordDTO {
+  currentPassword: string;
   password: string;
 }
 
